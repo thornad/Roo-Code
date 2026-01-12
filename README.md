@@ -1,6 +1,8 @@
-# Roo-Code Patches for LM Studio
+# Roo-Code LM Studio
 
-Custom patches for Roo-Code to improve LM Studio integration.
+[![GitHub](https://img.shields.io/badge/GitHub-thornad%2FRoo--Code--LM--Studio-blue)](https://github.com/thornad/Roo-Code-LM-Studio)
+
+A fork of [Roo-Code](https://github.com/RooCodeInc/Roo-Code) with patches to improve LM Studio integration.
 
 ## Quick Start
 
@@ -9,7 +11,8 @@ Custom patches for Roo-Code to improve LM Studio integration.
 **Installation:**
 
 ```bash
-code --install-extension source/bin/roo-cline-3.39.3-axios.vsix --force
+# Download from releases or build locally
+code --install-extension bin/roo-cline-3.39.3-axios.vsix --force
 ```
 
 **VSCode Settings:**
@@ -143,52 +146,24 @@ if (newContent.startsWith("```")) { ... }  // Works
 
 ---
 
-## Upgrading to New Versions
+## Upgrading to New Upstream Versions
 
-### Step 1: Backup Current Build
-
-```bash
-mkdir -p backups/v3.36.x
-cp source/bin/roo-cline-*.vsix backups/v3.36.x/
-cp source/src/api/providers/lm-studio.ts backups/v3.36.x/lm-studio.ts.patched
-```
-
-### Step 2: Update Source
+### Step 1: Fetch upstream changes
 
 ```bash
-cd source
-git stash -m "Local changes before upgrade"
-git fetch --tags origin
-git checkout v3.XX.X  # Replace with latest tag
+git fetch origin  # origin = RooCodeInc/Roo-Code
+git merge origin/main
+# Resolve any conflicts in patched files
 ```
 
-### Step 3: Apply Patches
-
-```bash
-# Apply axios timeout patch
-git apply ../axios-timeout.patch
-
-# Apply path trim patch
-git apply ../path-trim.patch
-
-# Apply native type safety patch
-git apply ../native-type-safety.patch
-```
-
-Or use the patch template for lm-studio.ts:
-
-```bash
-cp ../lm-studio.ts.axios-patch src/api/providers/lm-studio.ts
-```
-
-### Step 4: Build
+### Step 2: Build
 
 ```bash
 pnpm install
 pnpm vsix
 ```
 
-### Step 5: Install
+### Step 3: Install
 
 ```bash
 code --install-extension bin/roo-cline-*.vsix --force
@@ -196,27 +171,21 @@ code --install-extension bin/roo-cline-*.vsix --force
 
 ---
 
-## Directory Structure
+## Repository Structure
 
 ```
-roocode/
+Roo-Code-LM-Studio/
 ├── README.md                    <- You are here
-├── axios-timeout.patch          <- Timeout + stop execution patch
-├── path-trim.patch              <- MiniMax path whitespace fix
-├── native-type-safety.patch     <- Native tool call crash fix
-├── lm-studio.ts.axios-patch     <- Ready-to-copy patched file
-├── lm-studio.ts.axios-backup    <- Original backup
-├── patch.sh                     <- Automated patch script
-├── HOW-TO-PATCH.md              <- Detailed patching guide
-├── QUICK-PATCH.md               <- Quick reference
-├── ROOT-CAUSE-ANALYSIS.md       <- Technical deep dive
-├── backups/                     <- Previous version backups
-│   └── v3.31.x/
-└── source/                      <- Roo-Code git repo (v3.39.3)
-    ├── src/api/providers/
-    │   └── lm-studio.ts         <- Patched file
-    └── bin/
-        └── roo-cline-3.39.3-axios.vsix
+├── src/
+│   ├── api/providers/
+│   │   └── lm-studio.ts         <- Patched: axios timeout + stop execution
+│   └── core/tools/
+│       ├── ApplyDiffTool.ts     <- Patched: type safety
+│       ├── EditFileTool.ts      <- Patched: type safety
+│       ├── ReadFileTool.ts      <- Patched: type safety + path trim
+│       └── WriteToFileTool.ts   <- Patched: type safety
+└── bin/
+    └── roo-cline-3.39.3-axios.vsix  <- Pre-built extension
 ```
 
 ---
@@ -251,3 +220,5 @@ Confirmed working with:
 
 **Status:** Production Ready
 **Last Updated:** 2025-01-12
+**Upstream:** [RooCodeInc/Roo-Code](https://github.com/RooCodeInc/Roo-Code)
+**Fork:** [thornad/Roo-Code-LM-Studio](https://github.com/thornad/Roo-Code-LM-Studio)
