@@ -6,25 +6,27 @@ A fork of [Roo-Code](https://github.com/RooCodeInc/Roo-Code) with patches to imp
 
 ## Quick Start
 
-**Current working version:** `roo-cline-3.39.3-axios.vsix`
+### 1. Download & Install
 
-**Installation:**
+[![Download Latest Release](https://img.shields.io/github/v/release/thornad/Roo-Code-LM-Studio?label=Download&style=for-the-badge)](https://github.com/thornad/Roo-Code-LM-Studio/releases/latest)
 
 ```bash
-# Download from releases or build locally
-code --install-extension bin/roo-cline-3.39.3-axios.vsix --force
+# Download roo-cline-3.39.3-axios.vsix from the release, then:
+code --install-extension roo-cline-3.39.3-axios.vsix --force
 ```
 
-**VSCode Settings:**
+### 2. Configure VSCode Settings
 
 ```json
 {
-	"roo-cline.lmStudioBaseUrl": "http://localhost:1234",
-	"roo-cline.apiRequestTimeout": 3600
+  "roo-cline.lmStudioBaseUrl": "http://localhost:1234",
+  "roo-cline.apiRequestTimeout": 3600
 }
 ```
 
-Restart VSCode and test!
+### 3. Restart VSCode
+
+That's it!
 
 ---
 
