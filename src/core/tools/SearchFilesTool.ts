@@ -21,7 +21,8 @@ export class SearchFilesTool extends BaseTool<"search_files"> {
 
 	parseLegacy(params: Partial<Record<string, string>>): SearchFilesParams {
 		return {
-			path: params.path || "",
+			// Trim path to handle models that output paths with extra whitespace
+			path: (params.path || "").trim(),
 			regex: params.regex || "",
 			file_pattern: params.file_pattern || undefined,
 		}

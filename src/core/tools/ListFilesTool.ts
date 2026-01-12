@@ -24,7 +24,8 @@ export class ListFilesTool extends BaseTool<"list_files"> {
 		const recursive = recursiveRaw?.toLowerCase() === "true"
 
 		return {
-			path: params.path || "",
+			// Trim path to handle models that output paths with extra whitespace
+			path: (params.path || "").trim(),
 			recursive,
 		}
 	}

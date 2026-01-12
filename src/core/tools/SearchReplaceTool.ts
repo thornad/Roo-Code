@@ -26,7 +26,8 @@ export class SearchReplaceTool extends BaseTool<"search_replace"> {
 
 	parseLegacy(params: Partial<Record<string, string>>): SearchReplaceParams {
 		return {
-			file_path: params.file_path || "",
+			// Trim file_path to handle models that output paths with extra whitespace
+			file_path: (params.file_path || "").trim(),
 			old_string: params.old_string || "",
 			new_string: params.new_string || "",
 		}

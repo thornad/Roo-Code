@@ -66,7 +66,8 @@ export class ReadFileTool extends BaseTool<"read_file"> {
 				if (!file.path) continue
 
 				const fileEntry: FileEntry = {
-					path: file.path,
+					// Defensive: ensure path is a string before calling trim() (native tool calls may send malformed data)
+					path: typeof file.path === "string" ? file.path.trim() : String(file.path || ""),
 					lineRanges: [],
 				}
 
@@ -91,7 +92,8 @@ export class ReadFileTool extends BaseTool<"read_file"> {
 		// Legacy single file path
 		if (legacyPath) {
 			const fileEntry: FileEntry = {
-				path: legacyPath,
+				// Defensive: ensure path is a string before calling trim()
+				path: typeof legacyPath === "string" ? legacyPath.trim() : String(legacyPath || ""),
 				lineRanges: [],
 			}
 

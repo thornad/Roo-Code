@@ -26,14 +26,17 @@ export class ApplyDiffTool extends BaseTool<"apply_diff"> {
 
 	parseLegacy(params: Partial<Record<string, string>>): ApplyDiffParams {
 		return {
-			path: params.path || "",
+			// Trim path to handle models that output paths with extra whitespace
+			path: (params.path || "").trim(),
 			diff: params.diff || "",
 		}
 	}
 
 	async execute(params: ApplyDiffParams, task: Task, callbacks: ToolCallbacks): Promise<void> {
 		const { askApproval, handleError, pushToolResult, toolProtocol } = callbacks
-		let { path: relPath, diff: diffContent } = params
+		// Defensive type handling for native tool calls that bypass parseLegacy()
+		let relPath = typeof params.path === "string" ? params.path.trim() : ""
+		let diffContent = typeof params.diff === "string" ? params.diff : ""
 
 		if (diffContent && !task.api.getModel().id.includes("claude")) {
 			diffContent = unescapeHtmlEntities(diffContent)

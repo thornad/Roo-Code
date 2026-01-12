@@ -138,7 +138,8 @@ export class EditFileTool extends BaseTool<"edit_file"> {
 
 	parseLegacy(params: Partial<Record<string, string>>): EditFileParams {
 		return {
-			file_path: params.file_path || "",
+			// Trim file_path to handle models that output paths with extra whitespace
+			file_path: (params.file_path || "").trim(),
 			old_string: params.old_string || "",
 			new_string: params.new_string || "",
 			expected_replacements: params.expected_replacements
@@ -148,9 +149,9 @@ export class EditFileTool extends BaseTool<"edit_file"> {
 	}
 
 	async execute(params: EditFileParams, task: Task, callbacks: ToolCallbacks): Promise<void> {
-		// Coerce old_string/new_string to handle malformed native tool calls where they could be non-strings.
+		// Coerce all params to handle malformed native tool calls where they could be non-strings.
 		// In native mode, malformed calls can pass numbers/objects; normalize those to "" to avoid later crashes.
-		const file_path = params.file_path
+		const file_path = typeof params.file_path === "string" ? params.file_path.trim() : ""
 		const old_string = typeof params.old_string === "string" ? params.old_string : ""
 		const new_string = typeof params.new_string === "string" ? params.new_string : ""
 		const expected_replacements = params.expected_replacements ?? 1
