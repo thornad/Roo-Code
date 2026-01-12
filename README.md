@@ -1,176 +1,253 @@
-<p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline"><img src="https://img.shields.io/badge/VS_Code_Marketplace-007ACC?style=flat&logo=visualstudiocode&logoColor=white" alt="VS Code Marketplace"></a>
-  <a href="https://x.com/roocode"><img src="https://img.shields.io/badge/roocode-000000?style=flat&logo=x&logoColor=white" alt="X"></a>
-  <a href="https://youtube.com/@roocodeyt?feature=shared"><img src="https://img.shields.io/badge/YouTube-FF0000?style=flat&logo=youtube&logoColor=white" alt="YouTube"></a>
-  <a href="https://discord.gg/roocode"><img src="https://img.shields.io/badge/Join%20Discord-5865F2?style=flat&logo=discord&logoColor=white" alt="Join Discord"></a>
-  <a href="https://www.reddit.com/r/RooCode/"><img src="https://img.shields.io/badge/Join%20r%2FRooCode-FF4500?style=flat&logo=reddit&logoColor=white" alt="Join r/RooCode"></a>
-</p>
-<p align="center">
-  <em>Get help fast → <a href="https://discord.gg/roocode">Join Discord</a> • Prefer async? → <a href="https://www.reddit.com/r/RooCode/">Join r/RooCode</a></em>
-</p>
+# Roo-Code Patches for LM Studio
 
-# Roo Code
+Custom patches for Roo-Code to improve LM Studio integration.
 
-> Your AI-Powered Dev Team, Right in Your Editor
+## Quick Start
 
-<details>
-  <summary>🌐 Available languages</summary>
+**Current working version:** `roo-cline-3.39.3-axios.vsix`
 
-- [English](README.md)
-- [Català](locales/ca/README.md)
-- [Deutsch](locales/de/README.md)
-- [Español](locales/es/README.md)
-- [Français](locales/fr/README.md)
-- [हिंदी](locales/hi/README.md)
-- [Bahasa Indonesia](locales/id/README.md)
-- [Italiano](locales/it/README.md)
-- [日本語](locales/ja/README.md)
-- [한국어](locales/ko/README.md)
-- [Nederlands](locales/nl/README.md)
-- [Polski](locales/pl/README.md)
-- [Português (BR)](locales/pt-BR/README.md)
-- [Русский](locales/ru/README.md)
-- [Türkçe](locales/tr/README.md)
-- [Tiếng Việt](locales/vi/README.md)
-- [简体中文](locales/zh-CN/README.md)
-- [繁體中文](locales/zh-TW/README.md)
-- ...
-      </details>
+**Installation:**
 
----
-
-## What Can Roo Code Do For YOU?
-
-- Generate Code from natural language descriptions and specs
-- Adapt with Modes: Code, Architect, Ask, Debug, and Custom Modes
-- Refactor & Debug existing code
-- Write & Update documentation
-- Answer Questions about your codebase
-- Automate repetitive tasks
-- Utilize MCP Servers
-
-## Modes
-
-Roo Code adapts to how you work:
-
-- Code Mode: everyday coding, edits, and file ops
-- Architect Mode: plan systems, specs, and migrations
-- Ask Mode: fast answers, explanations, and docs
-- Debug Mode: trace issues, add logs, isolate root causes
-- Custom Modes: build specialized modes for your team or workflow
-- Roomote Control: Roomote Control lets you remotely control tasks running in your local VS Code instance.
-
-Learn more: [Using Modes](https://docs.roocode.com/basic-usage/using-modes) • [Custom Modes](https://docs.roocode.com/advanced-usage/custom-modes) • [Roomote Control](https://docs.roocode.com/roo-code-cloud/roomote-control)
-
-## Tutorial & Feature Videos
-
-<div align="center">
-
-|                                                                                                                                                                           |                                                                                                                                                                            |                                                                                                                                                                         |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <a href="https://www.youtube.com/watch?v=Mcq3r1EPZ-4"><img src="https://img.youtube.com/vi/Mcq3r1EPZ-4/maxresdefault.jpg" width="100%"></a><br><b>Installing Roo Code</b> | <a href="https://www.youtube.com/watch?v=ZBML8h5cCgo"><img src="https://img.youtube.com/vi/ZBML8h5cCgo/maxresdefault.jpg" width="100%"></a><br><b>Configuring Profiles</b> | <a href="https://www.youtube.com/watch?v=r1bpod1VWhg"><img src="https://img.youtube.com/vi/r1bpod1VWhg/maxresdefault.jpg" width="100%"></a><br><b>Codebase Indexing</b> |
-|    <a href="https://www.youtube.com/watch?v=iiAv1eKOaxk"><img src="https://img.youtube.com/vi/iiAv1eKOaxk/maxresdefault.jpg" width="100%"></a><br><b>Custom Modes</b>     |     <a href="https://www.youtube.com/watch?v=Ho30nyY332E"><img src="https://img.youtube.com/vi/Ho30nyY332E/maxresdefault.jpg" width="100%"></a><br><b>Checkpoints</b>      |    <a href="https://www.youtube.com/watch?v=HmnNSasv7T8"><img src="https://img.youtube.com/vi/HmnNSasv7T8/maxresdefault.jpg" width="100%"></a><br><b>Context Management</b>     |
-
-</div>
-<p align="center">
-<a href="https://docs.roocode.com/tutorial-videos">More quick tutorial and feature videos...</a>
-</p>
-
-## Resources
-
-- **[Documentation](https://docs.roocode.com):** The official guide to installing, configuring, and mastering Roo Code.
-- **[YouTube Channel](https://youtube.com/@roocodeyt?feature=shared):** Watch tutorials and see features in action.
-- **[Discord Server](https://discord.gg/roocode):** Join the community for real-time help and discussion.
-- **[Reddit Community](https://www.reddit.com/r/RooCode):** Share your experiences and see what others are building.
-- **[GitHub Issues](https://github.com/RooCodeInc/Roo-Code/issues):** Report bugs and track development.
-- **[Feature Requests](https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop):** Have an idea? Share it with the developers.
-
----
-
-## Local Setup & Development
-
-1. **Clone** the repo:
-
-```sh
-git clone https://github.com/RooCodeInc/Roo-Code.git
+```bash
+code --install-extension source/bin/roo-cline-3.39.3-axios.vsix --force
 ```
 
-2. **Install dependencies**:
+**VSCode Settings:**
 
-```sh
+```json
+{
+	"roo-cline.lmStudioBaseUrl": "http://localhost:1234",
+	"roo-cline.apiRequestTimeout": 3600
+}
+```
+
+Restart VSCode and test!
+
+---
+
+## Patches Overview
+
+| Patch                        | File                | Purpose                          |
+| ---------------------------- | ------------------- | -------------------------------- |
+| **axios-timeout.patch**      | `lm-studio.ts`      | Timeout fix + Stop execution     |
+| **path-trim.patch**          | Multiple tool files | MiniMax M2.1 path whitespace fix |
+| **native-type-safety.patch** | Multiple tool files | Native tool call crash fix       |
+
+---
+
+## Patch Details
+
+### 1. Axios Timeout Patch (`axios-timeout.patch`)
+
+**Problem:** OpenAI SDK uses Node.js fetch/undici with hardcoded 300-second timeout. Long-running LLM operations fail at 301 seconds.
+
+**Solution:** Replace OpenAI SDK with axios HTTP client that respects the `apiRequestTimeout` setting.
+
+**Files Modified:**
+
+- `src/api/providers/lm-studio.ts`
+
+**Features:**
+
+- Configurable timeout via `roo-cline.apiRequestTimeout` setting
+- SSE streaming with custom parser
+- No more 301-second timeout errors
+
+---
+
+### 2. Stop Execution Fix (included in axios-timeout.patch)
+
+**Problem:** Clicking "Stop" in Roo-Code didn't actually stop the LLM request - it would continue running in the background.
+
+**Solution:** Implemented AbortController to properly cancel HTTP requests.
+
+**Implementation:**
+
+```typescript
+// AbortController for request cancellation
+private currentAbortController: AbortController | null = null
+
+abort(): void {
+    if (this.currentAbortController) {
+        this.currentAbortController.abort()
+        this.currentAbortController = null
+    }
+}
+
+// In createMessage():
+this.currentAbortController = new AbortController()
+axios.get(..., { signal: this.currentAbortController.signal })
+```
+
+**Result:** Stop button now immediately cancels the LLM request.
+
+---
+
+### 3. Path Trim Patch (`path-trim.patch`)
+
+**Problem:** MiniMax M2.1 model outputs file paths with extra whitespace (e.g., `" src/file.ts"` instead of `"src/file.ts"`), causing file operations to fail.
+
+**Solution:** Trim whitespace from file paths in all tool parsers.
+
+**Files Modified:**
+
+- `src/core/assistant-message/NativeToolCallParser.ts`
+- `src/core/tools/ApplyDiffTool.ts`
+- `src/core/tools/EditFileTool.ts`
+- `src/core/tools/ListFilesTool.ts`
+- `src/core/tools/ReadFileTool.ts`
+- `src/core/tools/SearchFilesTool.ts`
+- `src/core/tools/WriteFileTool.ts`
+- And others...
+
+**Example fix:**
+
+```typescript
+// Before:
+const entry: FileEntry = { path: file.path }
+
+// After:
+const entry: FileEntry = { path: typeof file.path === "string" ? file.path.trim() : file.path }
+```
+
+---
+
+### 4. Native Type Safety Patch (`native-type-safety.patch`)
+
+**Problem:** Native tool calls (used by LM Studio, Ollama, etc.) bypass the `parseLegacy()` method and send parameters directly to `execute()`. If a model sends malformed data where `path` or `content` are undefined/null/non-string, methods like `.startsWith()` or `.trim()` crash with `TypeError: h.startsWith is not a function`.
+
+**Solution:** Add defensive type checking in `execute()` methods to handle malformed native tool call parameters.
+
+**Files Modified:**
+
+- `src/core/tools/WriteToFileTool.ts`
+- `src/core/tools/ReadFileTool.ts`
+- `src/core/tools/EditFileTool.ts`
+- `src/core/tools/ApplyDiffTool.ts`
+
+**Example fix:**
+
+````typescript
+// Before (crashes if params.content is undefined):
+const relPath = params.path
+let newContent = params.content
+if (newContent.startsWith("```")) { ... }  // TypeError!
+
+// After (safe):
+const relPath = typeof params.path === "string" ? params.path.trim() : ""
+let newContent = typeof params.content === "string" ? params.content : ""
+if (newContent.startsWith("```")) { ... }  // Works
+````
+
+**Root Cause:** This is an existing bug in Roo Code's native tool call handling, not introduced by our patches. It surfaces when using LM Studio with native tool protocol because models may send incomplete or malformed parameter data.
+
+---
+
+## Upgrading to New Versions
+
+### Step 1: Backup Current Build
+
+```bash
+mkdir -p backups/v3.36.x
+cp source/bin/roo-cline-*.vsix backups/v3.36.x/
+cp source/src/api/providers/lm-studio.ts backups/v3.36.x/lm-studio.ts.patched
+```
+
+### Step 2: Update Source
+
+```bash
+cd source
+git stash -m "Local changes before upgrade"
+git fetch --tags origin
+git checkout v3.XX.X  # Replace with latest tag
+```
+
+### Step 3: Apply Patches
+
+```bash
+# Apply axios timeout patch
+git apply ../axios-timeout.patch
+
+# Apply path trim patch
+git apply ../path-trim.patch
+
+# Apply native type safety patch
+git apply ../native-type-safety.patch
+```
+
+Or use the patch template for lm-studio.ts:
+
+```bash
+cp ../lm-studio.ts.axios-patch src/api/providers/lm-studio.ts
+```
+
+### Step 4: Build
+
+```bash
 pnpm install
+pnpm vsix
 ```
 
-3. **Run the extension**:
+### Step 5: Install
 
-There are several ways to run the Roo Code extension:
-
-### Development Mode (F5)
-
-For active development, use VSCode's built-in debugging:
-
-Press `F5` (or go to **Run** → **Start Debugging**) in VSCode. This will open a new VSCode window with the Roo Code extension running.
-
-- Changes to the webview will appear immediately.
-- Changes to the core extension will also hot reload automatically.
-
-### Automated VSIX Installation
-
-To build and install the extension as a VSIX package directly into VSCode:
-
-```sh
-pnpm install:vsix [-y] [--editor=<command>]
+```bash
+code --install-extension bin/roo-cline-*.vsix --force
 ```
 
-This command will:
+---
 
-- Ask which editor command to use (code/cursor/code-insiders) - defaults to 'code'
-- Uninstall any existing version of the extension.
-- Build the latest VSIX package.
-- Install the newly built VSIX.
-- Prompt you to restart VS Code for changes to take effect.
+## Directory Structure
 
-Options:
-
-- `-y`: Skip all confirmation prompts and use defaults
-- `--editor=<command>`: Specify the editor command (e.g., `--editor=cursor` or `--editor=code-insiders`)
-
-### Manual VSIX Installation
-
-If you prefer to install the VSIX package manually:
-
-1.  First, build the VSIX package:
-    ```sh
-    pnpm vsix
-    ```
-2.  A `.vsix` file will be generated in the `bin/` directory (e.g., `bin/roo-cline-<version>.vsix`).
-3.  Install it manually using the VSCode CLI:
-    ```sh
-    code --install-extension bin/roo-cline-<version>.vsix
-    ```
+```
+roocode/
+├── README.md                    <- You are here
+├── axios-timeout.patch          <- Timeout + stop execution patch
+├── path-trim.patch              <- MiniMax path whitespace fix
+├── native-type-safety.patch     <- Native tool call crash fix
+├── lm-studio.ts.axios-patch     <- Ready-to-copy patched file
+├── lm-studio.ts.axios-backup    <- Original backup
+├── patch.sh                     <- Automated patch script
+├── HOW-TO-PATCH.md              <- Detailed patching guide
+├── QUICK-PATCH.md               <- Quick reference
+├── ROOT-CAUSE-ANALYSIS.md       <- Technical deep dive
+├── backups/                     <- Previous version backups
+│   └── v3.31.x/
+└── source/                      <- Roo-Code git repo (v3.39.3)
+    ├── src/api/providers/
+    │   └── lm-studio.ts         <- Patched file
+    └── bin/
+        └── roo-cline-3.39.3-axios.vsix
+```
 
 ---
 
-We use [changesets](https://github.com/changesets/changesets) for versioning and publishing. Check our `CHANGELOG.md` for release notes.
+## Version History
+
+| Version           | Date       | Patches Applied                                |
+| ----------------- | ---------- | ---------------------------------------------- |
+| 3.39.3-axios      | 2025-01-12 | axios-timeout + path-trim + native-type-safety |
+| 3.36.16-axios     | 2024-12-20 | axios-timeout + path-trim                      |
+| 3.36.12           | 2024-12-18 | axios-timeout                                  |
+| 3.36.0            | 2024-12-04 | axios-timeout                                  |
+| 3.34.8            | 2024-12-01 | axios-timeout                                  |
+| 3.34.7-axios      | 2024-11-27 | axios-timeout                                  |
+| 3.31.5-dispatcher | 2024-11-10 | Alternative dispatcher approach                |
+| 3.31.4-axios      | 2024-11-10 | Initial axios patch                            |
 
 ---
 
-## Disclaimer
+## Testing
 
-**Please note** that Roo Code, Inc does **not** make any representations or warranties regarding any code, models, or other tools provided or made available in connection with Roo Code, any associated third-party tools, or any resulting outputs. You assume **all risks** associated with the use of any such tools or outputs; such tools are provided on an **"AS IS"** and **"AS AVAILABLE"** basis. Such risks may include, without limitation, intellectual property infringement, cyber vulnerabilities or attacks, bias, inaccuracies, errors, defects, viruses, downtime, property loss or damage, and/or personal injury. You are solely responsible for your use of any such tools or outputs (including, without limitation, the legality, appropriateness, and results thereof).
+Confirmed working with:
 
----
-
-## Contributing
-
-We love community contributions! Get started by reading our [CONTRIBUTING.md](CONTRIBUTING.md).
-
----
-
-## License
-
-[Apache 2.0 © 2025 Roo Code, Inc.](./LICENSE)
+- Node.js v22+
+- LM Studio 0.3.x
+- Large PDF files (6.7MB+)
+- Processing times >30 minutes
+- Stop execution works immediately
+- MiniMax M2.1 file operations work correctly
 
 ---
 
-**Enjoy Roo Code!** Whether you keep it on a short leash or let it roam autonomously, we can’t wait to see what you build. If you have questions or feature ideas, drop by our [Reddit community](https://www.reddit.com/r/RooCode/) or [Discord](https://discord.gg/roocode). Happy coding!
+**Status:** Production Ready
+**Last Updated:** 2025-01-12
