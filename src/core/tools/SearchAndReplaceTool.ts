@@ -40,7 +40,8 @@ export class SearchAndReplaceTool extends BaseTool<"search_and_replace"> {
 		}
 
 		return {
-			path: params.path || "",
+			// Trim path to handle models that output paths with extra whitespace
+			path: (params.path || "").trim(),
 			operations,
 		}
 	}

@@ -28,15 +28,18 @@ export class WriteToFileTool extends BaseTool<"write_to_file"> {
 
 	parseLegacy(params: Partial<Record<string, string>>): WriteToFileParams {
 		return {
-			path: params.path || "",
+			// Trim path to handle models that output paths with extra whitespace
+			path: (params.path || "").trim(),
 			content: params.content || "",
 		}
 	}
 
 	async execute(params: WriteToFileParams, task: Task, callbacks: ToolCallbacks): Promise<void> {
 		const { pushToolResult, handleError, askApproval, removeClosingTag } = callbacks
-		const relPath = params.path
-		let newContent = params.content
+		// Defensive type handling for native tool calls that bypass parseLegacy()
+		// Models may send malformed data where path/content are not strings
+		const relPath = typeof params.path === "string" ? params.path.trim() : ""
+		let newContent = typeof params.content === "string" ? params.content : ""
 
 		if (!relPath) {
 			task.consecutiveMistakeCount++

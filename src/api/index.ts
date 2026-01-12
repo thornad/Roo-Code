@@ -114,6 +114,12 @@ export interface ApiHandler {
 	 * @returns A promise resolving to the token count
 	 */
 	countTokens(content: Array<Anthropic.Messages.ContentBlockParam>): Promise<number>
+
+	/**
+	 * Abort the current streaming request if one is in progress.
+	 * Optional - only implemented by providers that support cancellation (e.g., LM Studio with axios).
+	 */
+	abort?(): void
 }
 
 export function buildApiHandler(configuration: ProviderSettings): ApiHandler {

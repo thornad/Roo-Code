@@ -2177,6 +2177,13 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			this.currentRequestAbortController.abort()
 			this.currentRequestAbortController = undefined
 		}
+
+		// Also abort the API provider's request if it supports cancellation
+		try {
+			this.api.abort?.()
+		} catch (error) {
+			console.error(`[Task#${this.taskId}.${this.instanceId}] Failed to abort API request:`, error)
+		}
 	}
 
 	/**

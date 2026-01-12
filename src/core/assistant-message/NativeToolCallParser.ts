@@ -309,7 +309,8 @@ export class NativeToolCallParser {
 	 */
 	private static convertFileEntries(files: any[]): FileEntry[] {
 		return files.map((file: any) => {
-			const entry: FileEntry = { path: file.path }
+			// Trim path to handle models that output paths with extra whitespace (e.g., MiniMax M2.1)
+			const entry: FileEntry = { path: typeof file.path === "string" ? file.path.trim() : file.path }
 			if (file.line_ranges && Array.isArray(file.line_ranges)) {
 				entry.lineRanges = file.line_ranges
 					.map((range: any) => {
