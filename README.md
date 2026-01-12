@@ -2,7 +2,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-thornad%2FRoo--Code--LM--Studio-blue)](https://github.com/thornad/Roo-Code-LM-Studio)
 
-A fork of [Roo-Code](https://github.com/RooCodeInc/Roo-Code) with patches to improve LM Studio integration.
+A fork of [Roo-Code](https://github.com/RooCodeInc/Roo-Code) with patches to fix timeouts and other issues encountered when using it on a local machine - in particular with LM Studio but not limited to it.
 
 ## Quick Start
 
